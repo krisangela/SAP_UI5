@@ -1,4 +1,4 @@
-import { useState } from 'react';
+  import { useState } from 'react';
 import {
   FlexBox,
   FlexBoxAlignItems,
@@ -11,6 +11,10 @@ import {
   ShellBar
 } from '@ui5/webcomponents-react';
 import './App.css';
+import { MyApp } from "./MyApp";
+import { HashRouter } from "react-router-dom";
+
+
 
 function App() {
   const [inputVal, setInputVal] = useState('');
@@ -19,7 +23,12 @@ function App() {
   };
   return (
     <>
-      <ShellBar primaryTitle="UI5 Web Components for React Template" />
+
+    <HashRouter>
+    <MyApp />
+</HashRouter>
+
+      {/* <ShellBar primaryTitle="UI5 Web Components for React Template" />
       <FlexBox
         style={{ width: '100%', height: '100vh' }}
         direction={FlexBoxDirection.Column}
@@ -31,7 +40,8 @@ function App() {
         </Link>
         <Input placeholder="Hello World" onInput={handleInput} value={inputVal} />
         <Label>{inputVal}</Label>
-      </FlexBox>
+      </FlexBox>  */}
+      
     </>
   );
 }
